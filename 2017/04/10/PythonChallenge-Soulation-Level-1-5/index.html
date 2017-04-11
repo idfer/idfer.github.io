@@ -1,0 +1,658 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Level 1一進去看到下面圖片的提示跟一段看不懂的文字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PythonChallenge Soulation (Level 1 ~ 5)">
+<meta property="og:url" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/index.html">
+<meta property="og:site_name" content="Idfer's Blog">
+<meta property="og:description" content="Level 1一進去看到下面圖片的提示跟一段看不懂的文字">
+<meta property="og:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level01.jpg">
+<meta property="og:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level02.jpg">
+<meta property="og:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level03.jpg">
+<meta property="og:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level04.jpg">
+<meta property="og:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level05.jpg">
+<meta property="og:updated_time" content="2017-04-11T02:02:53.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PythonChallenge Soulation (Level 1 ~ 5)">
+<meta name="twitter:description" content="Level 1一進去看到下面圖片的提示跟一段看不懂的文字">
+<meta name="twitter:image" content="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"remove","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/"/>
+
+
+
+
+
+  <title> PythonChallenge Soulation (Level 1 ~ 5) | Idfer's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96407018-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Idfer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Have Fun!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.idfer.tw/2017/04/10/PythonChallenge-Soulation-Level-1-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="idfer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Idfer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PythonChallenge Soulation (Level 1 ~ 5)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-04-10T17:43:18+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PythonChallenge/" itemprop="url" rel="index">
+                    <span itemprop="name">PythonChallenge</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/10/PythonChallenge-Soulation-Level-1-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/10/PythonChallenge-Soulation-Level-1-5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h1><p>一進去看到下面圖片的提示跟一段看不懂的文字</p>
+<img src="/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level01.jpg" alt="Level01.jpg" title="">
+<a id="more"></a>
+<p>根據題片上面的提示，我們要做字母的移位，把每個字母偏移 2 個字母。</p>
+<p>這個方法也是一種著名的加密方式：<a href="https://zh.wikipedia.org/wiki/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC" target="_blank" rel="external">凱撒密碼</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> string</div><div class="line"></div><div class="line">text = <span class="string">"g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."</span></div><div class="line"></div><div class="line">table = str.maketrans(string.ascii_lowercase, string.ascii_lowercase[<span class="number">2</span>:] + string.ascii_lowercase[:<span class="number">2</span>])</div><div class="line"></div><div class="line">print(text.translate(table))</div></pre></td></tr></table></figure>
+<p>解開後，就可得知下一關的連結</p>
+<h1 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h1><img src="/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level02.jpg" alt="Level02.jpg" title="">
+<p>根據這關的提示，打開網頁原始碼可以看到下方有一堆奇怪的符號，跟著提示發現這些符號裡面藏有字母。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">file = open(<span class="string">'ocr.txt'</span>, <span class="string">'r'</span>)</div><div class="line"></div><div class="line">find = []</div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    line = file.readline()</div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> line:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">else</span> :</div><div class="line">        find += [c <span class="keyword">for</span> c <span class="keyword">in</span> line <span class="keyword">if</span> c.isalpha()]</div><div class="line"></div><div class="line">print(<span class="string">''</span>.join(find))</div><div class="line">file.close()</div></pre></td></tr></table></figure>
+<p>把網頁下載後，在從符號中找出字母就可得到答案</p>
+<h1 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h1><img src="/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level03.jpg" alt="Level03.jpg" title="">
+<p>圖片上面的蠟燭有大有小，其中小的蠟燭左右被三個的蠟燭所包圍，再根據提示應該是要根據這個規則找出特定的字母。一樣打開網頁原始碼，就可以看到一大堆字串。</p>
+<p>接下來就利用 <code>Regular Expression</code> 來過濾出我們要的字元。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'equality.txt'</span>):</div><div class="line">	find = <span class="string">''</span>.join(re.findall(<span class="string">r"[a-z][A-Z]&#123;3&#125;([a-z]&#123;1&#125;[A-Z]&#123;3&#125;[a-z]"</span>, line.rstrip()))</div><div class="line">	print(find, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<p>這邊一開始我直接全部串起來用 Regular Expression 去找，出來的結果都不對。後來發現要一行一行去找才對….orz</p>
+<h1 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h1><img src="/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level04.jpg" alt="Level04.jpg" title="">
+<p>頁面上沒有什麼提示，但圖片有個超連結，點下去後出現 <strong>and the next nothing is 44827</strong>，觀察一下上面的網址再根據前面網頁的標題 follow the chain 跟網址 linkedlist.php，看來要寫程式跟著網址往下追。（在原始碼會發現作者說可能會需要用到 <code>urllib</code> module ）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"></div><div class="line">base = <span class="string">'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=&#123;0&#125;'</span></div><div class="line">path = [<span class="string">'12345'</span>]</div><div class="line">pattern = re.compile(<span class="string">r"[0-9]+$"</span>)</div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    url = base.format(path[len(path) - <span class="number">1</span>]);</div><div class="line">    print(url)</div><div class="line">    page = urllib.request.urlopen(url).read().decode(<span class="string">'UTF-8'</span>)</div><div class="line">    found = <span class="string">''</span>.join(re.findall(pattern, page))</div><div class="line">    <span class="keyword">if</span> (found):</div><div class="line">        path.append(found)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(page)</div><div class="line">        path.append(int(path[len(path) - <span class="number">1</span>])//<span class="number">2</span>)</div><div class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">            url = base.format(path[len(path) - <span class="number">1</span>]);</div><div class="line">            page = urllib.request.urlopen(url).read().decode(<span class="string">'UTF-8'</span>)</div><div class="line">            found = <span class="string">''</span>.join(re.findall(pattern, page))</div><div class="line">            <span class="keyword">if</span> (found):</div><div class="line">                path.append(found)</div><div class="line">                print(url)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(page)</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<p>url chain 在中間的地方，會有個小變化調整一下，最後就可以得到下一關的網址</p>
+<h1 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h1><img src="/2017/04/10/PythonChallenge-Soulation-Level-1-5/Level05.jpg" alt="Level05.jpg" title="">
+<p>提示給的是玩諧音的梗 XD，<code>peack hell</code> 唸起來像  <code>pickle</code>。<br><code>pickle</code> 是 Python 物件的 serialization 的模組，在根據網頁原始碼中的連結找到 serialization 後的 data 解回去，就可以得到答案</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pickle</div><div class="line"></div><div class="line"><span class="keyword">with</span> open(<span class="string">'banner.p'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">    data = pickle.load(f)</div><div class="line"></div><div class="line"><span class="keyword">for</span> bitmap <span class="keyword">in</span> data:</div><div class="line">    <span class="keyword">for</span> ele <span class="keyword">in</span> bitmap:</div><div class="line">        print(ele[<span class="number">0</span>] * ele[<span class="number">1</span>], end=<span class="string">''</span>)</div><div class="line">    print()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/29/XML-RPC-Introduction/" rel="next" title="XML-RPC Introduction">
+                <i class="fa fa-chevron-left"></i> XML-RPC Introduction
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">idfer</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'idfer-blog';
+      var disqus_identifier = '2017/04/10/PythonChallenge-Soulation-Level-1-5/';
+
+      var disqus_title = "PythonChallenge Soulation (Level 1 ~ 5)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
